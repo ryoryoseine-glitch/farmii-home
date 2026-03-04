@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>Untitled</title>
+    
+
+  </head>
+    
+  <body>
+  <!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>Farmii A4 Flyer Design</title>
+    <style>
+        :root {
+            --primary-green: #2d5016;
+            --accent-green: #4a7c2c;
+            --light-green: #f0f7f0;
+            --earth-brown: #8b6f47;
+            --card-bg: #f3f8f1;
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f0f0f0;
+            -webkit-print-color-adjust: exact;
+            font-size: 160%;
+        }
+        .a4-page {
+            width: 210mm;
+            height: 297mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        @media print {
+            body { background: none; }
+            .a4-page { margin: 0; box-shadow: none; }
+        }
+        .text-primary-green { color: var(--primary-green); }
+        .bg-primary-green { background-color: var(--primary-green); }
+        .bg-light-green { background-color: var(--light-green); }
+        .border-earth { border-color: var(--earth-brown); }
+        
+        .feature-card {
+            background: white;
+            border-radius: 1.25rem;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+            padding: 1.25rem 1rem;
+            /* マスの高さを内容（文章）に合わせるため高さを固定しない */
+            height: auto;
+            border: 3px solid #2d5016;
+        }
+
+        .problem-card {
+            background: var(--card-bg);
+            border-radius: 0.75rem;
+            padding: 0.75rem;
+            text-align: center;
+            border: 3px solid #2d5016;
+            box-shadow: 0 6px 14px rgba(45, 80, 22, 0.12);
+        }
+
+        .step-icon-circle {
+            width: 32px;
+            height: 32px;
+            background-color: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="a4-page">
+    <!-- Header Area -->
+    <header class="px-12 pt-5 flex justify-between items-center">
+        <div class="text-2xl font-black tracking-tighter text-primary-green italic">farmii（ファーミィー）</div>
+        <div class="text-right">
+            <div class="text-[8px] text-gray-500">ご連絡はこちらまで</div>
+            <div class="text-[9px] font-bold text-primary-green">rowsey@g.ecc.u-tokyo.ac.jp</div>
+        </div>
+    </header>
+
+    <!-- Hero Area -->
+    <section class="px-12 pt-1 pb-1 relative text-center">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h1 class="text-[32px] font-black leading-tight mb-2 text-gray-800 whitespace-nowrap">
+                あの資材、<span class="text-primary-green">実際どうだった？</span>
+            </h1>
+            <p class="text-md text-gray-600 font-medium leading-relaxed mb-3 whitespace-nowrap">
+                「実際に使った農家さんの声」で、<span class="text-gray-900 font-bold underline decoration-accent-green decoration-2 underline-offset-4">スマートな資材選び</span>を。
+            </p>
+            <div class="inline-block bg-primary-green text-white px-5 py-2.5 rounded-lg shadow-sm">
+                <span class="text-2xl font-black italic tracking-tighter">🎯 こんな悩み、ありませんか？</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="px-12 py-1">
+        <div class="text-center mb-1.5"></div>
+        <div class="grid grid-cols-3 gap-3">
+            <div class="problem-card">
+                <h3 class="text-[12px] font-black text-primary-green mb-1 leading-tight">カタログでは判断できない</h3>
+                <p class="text-[8px] text-gray-500 leading-tight">実際に他の農家さんの圃場でうまくいっていないと、うちで使うのは不安</p>
+            </div>
+            <div class="problem-card">
+                <h3 class="text-[12px] font-black text-primary-green mb-1 leading-tight">ネットの情報は当てにしづらい</h3>
+                <p class="text-[8px] text-gray-500 leading-tight">実際にどの地域、どの作目の、どんな農家さんが使った感想なのかが判断できない</p>
+            </div>
+            <div class="problem-card">
+                <h3 class="text-[12px] font-black text-primary-green mb-1 leading-tight">こだわりのノウハウを語る場がない</h3>
+                <p class="text-[8px] text-gray-500 leading-tight">独自の散布方法や組み合わせの工夫などを、本当にわかる農家同士で語り合いたい</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Text Section -->
+    <section class="px-12 py-1">
+        <div class="bg-primary-green rounded-xl p-5 text-white relative overflow-hidden shadow-sm">
+            <div class="relative z-10 text-center">
+                <p class="text-base font-black leading-relaxed">
+                    Farmiiは農家による農家のための農業資材レビューのデータベースです
+                </p>
+            </div>
+            <div class="absolute -right-4 -bottom-4 opacity-10 text-6xl select-none">🌾</div>
+        </div>
+    </section>
+
+    <!-- Featured Steps (Removed flex-grow to fit content) -->
+    <section class="px-12 py-2">
+        <div class="grid grid-cols-3 gap-4">
+            <!-- Feature 1 -->
+            <div class="feature-card">
+                <h3 class="text-base font-black text-primary-green mb-2 leading-tight">Step1　プロフィールに地域・土質・作目を紐づけ</h3>
+                <p class="text-[11px] text-gray-800 font-medium leading-relaxed">自分と似た環境の農家が、どんな資材をどう使っているのかを一発で検索・比較できます</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-card">
+                <h3 class="text-base font-black text-primary-green mb-2 leading-tight">Step2　現場のリアルなレビューを投稿・閲覧</h3>
+                <p class="text-[11px] text-gray-800 font-medium leading-relaxed">「この時期にこの機尺倍率で」など、現場のリアルなレビューを閲覧。<br>あなた自身のこだわりの防除や施肥の記録も、対象を選んで書くだけで簡単に投稿</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-card">
+                <h3 class="text-base font-black text-primary-green mb-2 leading-tight">Step3　全国の農家とつながる</h3>
+                <p class="text-[11px] text-gray-800 font-medium leading-relaxed">コミュニティに参加することで、マニアックな工夫を評価し合い、全国のプロ農家たちと知見をアップデートできます</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- UI Screenshot Section -->
+    <section class="px-12 py-3">
+    <div class="text-center mb-2">
+        <h2 class="text-base font-black text-primary-green tracking-tight">
+            実際の画面イメージ
+        </h2>
+        <p class="text-[9px] text-gray-500">
+            条件付きレビュー検索と、投稿画面
+        </p>
+        <p class="text-[8px] text-gray-400 mt-0.5">
+            スマホ版も近日中に公開予定です
+        </p>
+    </div>
+
+        <div class="grid grid-cols-2 gap-4">
+            <!-- 左：検索画面 -->
+            <div class="rounded-xl overflow-hidden shadow-md border border-gray-100">
+                <img src="../images/noureview-search.png"
+                     class="w-full h-[80mm] object-cover object-left-top"
+                     alt="検索画面">
+            </div>
+
+            <!-- 右：レビュー投稿画面 -->
+            <div class="rounded-xl overflow-hidden shadow-md border border-gray-100">
+                <img src="../images/noureview-review.png"
+                     class="w-full h-[80mm] object-cover object-left-top"
+                     alt="レビュー画面">
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area (Condensed CTA) -->
+    <footer class="px-12 py-4 border-t border-gray-100 bg-white mt-auto">
+        <div class="flex items-stretch bg-light-green border border-primary-green rounded-xl p-4 shadow-sm">
+            <!-- Left: Main Message -->
+            <div class="flex-grow flex flex-col justify-center border-r border-primary-green border-opacity-10 pr-5">
+                <h2 class="text-lg font-black text-primary-green mb-1 leading-tight tracking-tight italic">協力メンバー募集中</h2>
+                <div class="text-[9px] text-gray-700 font-bold leading-relaxed mb-2 tracking-tighter">
+                    あなたの経験が、他の農家さんを助け、農業全体の発展につながる。<br>
+                    そんな未来を、一緒に創りませんか？
+                </div>
+                <!-- Waiting List Notice -->
+                <div class="text-[10px] text-primary-green font-black leading-tight bg-white bg-opacity-40 p-1.5 rounded border border-primary-green border-opacity-5">
+                    ※現状はウェイティングリストの登録になります。<br>
+                    <span class="text-[8px] opacity-80">サービスがリリースされたら最初にお知らせします。</span>
+                </div>
+            </div>
+            
+            <!-- Right: Compact Steps & QR -->
+            <div class="flex items-center pl-5 gap-4">
+                <div class="flex items-center gap-3">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="step-icon-circle">✉️</div>
+                        <div class="text-[7px] font-bold text-primary-green leading-none">メール登録</div>
+                    </div>
+                    <div class="text-primary-green opacity-20 text-[10px]">→</div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center">
+                        <div class="step-icon-circle">📝</div>
+                        <div class="text-[7px] font-bold text-primary-green leading-none">環境入力</div>
+                    </div>
+                    <div class="text-primary-green opacity-20 text-[10px]">→</div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center">
+                        <div class="step-icon-circle">🚀</div>
+                        <div class="text-[7px] font-bold text-primary-green leading-none">先行通知</div>
+                    </div>
+                </div>
+                
+                <!-- QR Code (Condensed) -->
+                <div class="flex flex-col items-center shrink-0 border-l border-primary-green border-opacity-10 pl-4">
+                    <div class="w-16 h-16 bg-white border border-primary-green p-1 mb-1 shadow-xs rounded overflow-hidden">
+                        <img src="../images/qr-join.png" class="w-full h-full object-contain" alt="QRコード">
+                    </div>
+                    <span class="text-[6px] font-black text-primary-green tracking-widest uppercase">SCAN TO JOIN</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
+    
+  </body>
+  
+</html>

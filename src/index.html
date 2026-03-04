@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    <title>Farmii A4 Flyer Design</title>
+    <style>
+        :root {
+            --primary-green: #2d5016;
+            --accent-green: #4a7c2c;
+            --light-green: #f0f7f0;
+            --earth-brown: #8b6f47;
+            --card-bg: #f3f8f1;
+        }
+        body {
+            font-family: 'Noto Sans JP', sans-serif;
+            background-color: #f0f0f0;
+            -webkit-print-color-adjust: exact;
+        }
+        .a4-page {
+            width: 210mm;
+            height: 297mm;
+            margin: 20px auto;
+            background: white;
+            box-shadow: 0 0 15px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+        }
+        @media print {
+            body { background: none; }
+            .a4-page { margin: 0; box-shadow: none; }
+        }
+        .text-primary-green { color: var(--primary-green); }
+        .bg-primary-green { background-color: var(--primary-green); }
+        .bg-light-green { background-color: var(--light-green); }
+        .border-earth { border-color: var(--earth-brown); }
+        
+        .feature-card {
+            background: white;
+            border-radius: 1.25rem;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.03);
+            padding: 1.25rem 1rem;
+            /* マスの高さを内容（文章）に合わせるため高さを固定しない */
+            height: auto;
+        }
+
+        .problem-card {
+            background: var(--card-bg);
+            border-radius: 0.75rem;
+            padding: 0.75rem;
+            text-align: center;
+        }
+
+        .step-icon-circle {
+            width: 32px;
+            height: 32px;
+            background-color: var(--light-green);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1rem;
+            margin-bottom: 0.2rem;
+        }
+    </style>
+</head>
+<body>
+
+<div class="a4-page">
+    <!-- Header Area -->
+    <header class="px-12 pt-5 flex justify-between items-center">
+        <div class="text-2xl font-black tracking-tighter text-primary-green italic">farmii</div>
+    </header>
+
+    <!-- Hero Area -->
+    <section class="px-12 pt-1 pb-1 relative text-center">
+        <div class="max-w-4xl mx-auto relative z-10">
+            <h1 class="text-[32px] font-black leading-tight mb-2 text-gray-800 whitespace-nowrap">
+                あの資材、<span class="text-primary-green">実際どうだった？</span>
+            </h1>
+            <p class="text-md text-gray-600 font-medium leading-relaxed mb-3 whitespace-nowrap">
+                「実際に使った農家さんの声」で、<span class="text-gray-900 font-bold underline decoration-accent-green decoration-2 underline-offset-4">失敗しない資材選び</span>を。
+            </p>
+            <div class="inline-block bg-primary-green text-white px-5 py-2.5 rounded-lg shadow-sm">
+                <span class="text-2xl font-black italic tracking-tighter">🎯 カタログスペックではなく、データの声</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Problems Section -->
+    <section class="px-12 py-1">
+        <div class="text-center mb-1.5">
+            <h2 class="text-lg font-black text-primary-green tracking-tight">こんな悩み、ありませんか？</h2>
+            <p class="text-[8px] text-gray-400 font-bold uppercase tracking-wider">農業資材選びの3つの課題</p>
+        </div>
+        <div class="grid grid-cols-3 gap-3">
+            <div class="problem-card">
+                <div class="text-xl mb-1">😓</div>
+                <h3 class="text-[10px] font-bold text-primary-green mb-0.5 leading-tight">カタログだけでは<br>判断できない</h3>
+                <p class="text-[8px] text-gray-500 leading-tight">スペック表を見ても、実際にうちの畑で効果があるかわからない...</p>
+            </div>
+            <div class="problem-card">
+                <div class="text-xl mb-1">🤔</div>
+                <h3 class="text-[10px] font-bold text-primary-green mb-0.5 leading-tight">環境が違うと<br>参考にならない</h3>
+                <p class="text-[8px] text-gray-500 leading-tight">地域や作物が違うSNS情報は自分に当てはまるかわからない...</p>
+            </div>
+            <div class="problem-card">
+                <div class="text-xl mb-1">💸</div>
+                <h3 class="text-[10px] font-bold text-primary-green mb-0.5 leading-tight">失敗のリスクが<br>怖い</h3>
+                <p class="text-[8px] text-gray-500 leading-tight">新しい資材を試したいけど、高額だし失敗したらどうしよう...</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Text Section -->
+    <section class="px-12 py-1">
+        <div class="bg-primary-green rounded-xl p-5 text-white relative overflow-hidden shadow-sm">
+            <div class="relative z-10 text-center">
+                <p class="text-xs leading-relaxed opacity-95">
+                    Farmiiは、地域・土質・作目という<span class="font-bold text-white border-b border-white">「前提条件」</span>が揃っているからこそ、あなたにとって本当に役立つレビューが見つかるデータベースです。農家同士の経験を共有し、新しい資材導入の失敗リスクを大幅に軽減します。
+                </p>
+            </div>
+            <div class="absolute -right-4 -bottom-4 opacity-10 text-6xl select-none">🌾</div>
+        </div>
+    </section>
+
+    <!-- Featured Steps (Removed flex-grow to fit content) -->
+    <section class="px-12 py-2">
+        <div class="grid grid-cols-3 gap-4">
+            <!-- Feature 1 -->
+            <div class="feature-card">
+                <div class="mb-3">
+                    <svg class="w-8 h-8 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m21 21-5.197-5.197m0 0A7.5 7.5 0 1 0 5.196 5.196a7.5 7.5 0 0 0 10.607 10.607Z" />
+                    </svg>
+                </div>
+                <h3 class="text-sm font-bold text-gray-800 mb-1.5 leading-tight">環境の近い声を探す</h3>
+                <p class="text-[9px] text-gray-500 leading-relaxed tracking-tighter">目的や作目で絞り込み検索が可能。希釈量や使用時期もすぐに確認できます。</p>
+            </div>
+
+            <!-- Feature 2 -->
+            <div class="feature-card">
+                <div class="mb-3">
+                    <svg class="w-8 h-8 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="m16.862 4.487 1.687-1.688a1.875 1.875 0 1 1 2.652 2.652L10.582 16.07a4.5 4.5 0 0 1-1.897 1.13L6 18l.8-2.685a4.5 4.5 0 0 1 1.13-1.897l8.932-8.931Zm0 0L19.5 7.125M18 14v4.75A2.25 2.25 0 0 1 15.75 21H5.25A2.25 2.25 0 0 1 3 18.75V8.25A2.25 2.25 0 0 1 5.25 6H10" />
+                    </svg>
+                </div>
+                <h3 class="text-sm font-bold text-gray-800 mb-1.5 leading-tight">自分の経験を共有</h3>
+                <p class="text-[9px] text-gray-500 leading-relaxed tracking-tighter">対象を選んで書くだけ。あなたの圃場環境データが自動で紐づきます。</p>
+            </div>
+
+            <!-- Feature 3 -->
+            <div class="feature-card">
+                <div class="mb-3">
+                    <svg class="w-8 h-8 text-primary-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="1.5">
+                        <path stroke-linecap="round" stroke-linejoin="round" d="M15 19.128a9.38 9.38 0 0 0 2.625.372 9.337 9.337 0 0 0 4.121-.952 4.125 4.125 0 0 0-7.533-2.493M15 19.128v-.003c0-1.113-.285-2.16-.786-3.07M15 19.128v.106A12.318 12.318 0 0 1 8.624 21c-2.331 0-4.512-.645-6.374-1.766l-.001-.109a6.375 6.375 0 0 1 11.964-3.07M12 6.375a3.375 3.375 0 1 1-6.75 0 3.375 3.375 0 0 1 6.75 0Zm8.25 2.25a2.625 2.625 0 1 1-5.25 0 2.625 2.625 0 0 1 5.25 0Z" />
+                    </svg>
+                </div>
+                <h3 class="text-sm font-bold text-gray-800 mb-1.5 leading-tight">コミュニティで交流</h3>
+                <p class="text-[9px] text-gray-500 leading-relaxed tracking-tighter">特化型コミュニティに参加。同じ作目を作る仲間とSNS感覚で交流できます。</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Area (Condensed CTA) -->
+    <footer class="px-12 py-4 border-t border-gray-100 bg-white mt-auto">
+        <div class="flex items-stretch bg-light-green border border-primary-green rounded-xl p-4 shadow-sm">
+            <!-- Left: Main Message -->
+            <div class="flex-grow flex flex-col justify-center border-r border-primary-green border-opacity-10 pr-5">
+                <h2 class="text-lg font-black text-primary-green mb-1 leading-tight tracking-tight italic">協力メンバー募集中</h2>
+                <div class="text-[9px] text-gray-700 font-bold leading-relaxed mb-2 tracking-tighter">
+                    あなたの経験が、他の農家さんを助け、農業全体の発展につながる。<br>
+                    そんな未来を、一緒に創りませんか？
+                </div>
+                <!-- Waiting List Notice -->
+                <div class="text-[10px] text-primary-green font-black leading-tight bg-white bg-opacity-40 p-1.5 rounded border border-primary-green border-opacity-5">
+                    ※現状はウェイティングリストの登録になります。<br>
+                    <span class="text-[8px] opacity-80">サービスがリリースされたら最初にお知らせします。</span>
+                </div>
+            </div>
+            
+            <!-- Right: Compact Steps & QR -->
+            <div class="flex items-center pl-5 gap-4">
+                <div class="flex items-center gap-3">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col items-center">
+                        <div class="step-icon-circle">✉️</div>
+                        <div class="text-[7px] font-bold text-primary-green leading-none">メール登録</div>
+                    </div>
+                    <div class="text-primary-green opacity-20 text-[10px]">→</div>
+                    <!-- Step 2 -->
+                    <div class="flex flex-col items-center">
+                        <div class="step-icon-circle">📝</div>
+                        <div class="text-[7px] font-bold text-primary-green leading-none">環境入力</div>
+                    </div>
+                    <div class="text-primary-green opacity-20 text-[10px]">→</div>
+                    <!-- Step 3 -->
+                    <div class="flex flex-col items-center">
+                        <div class="step-icon-circle">🚀</div>
+                        <div class="text-[7px] font-bold text-primary-green leading-none">先行通知</div>
+                    </div>
+                </div>
+                
+                <!-- QR Code (Condensed) -->
+                <div class="flex flex-col items-center shrink-0 border-l border-primary-green border-opacity-10 pl-4">
+                    <div class="w-16 h-16 bg-white border border-primary-green p-1 mb-1 shadow-xs rounded overflow-hidden">
+                        <div class="w-full h-full bg-gray-900 flex items-center justify-center text-white text-[6px] text-center p-1 font-bold leading-tight uppercase">
+                            Register<br>Now
+                        </div>
+                    </div>
+                    <span class="text-[6px] font-black text-primary-green tracking-widest uppercase">SCAN TO JOIN</span>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+</body>
+</html>
