@@ -238,21 +238,72 @@
       <p class="text-xs tracking-widest text-[color:var(--primary)]/60 uppercase font-semibold text-center mb-3">Join</p>
       <h2 class="text-2xl md:text-3xl font-black text-center mb-2">初期メンバーに登録する（無料）</h2>
       <p class="text-center text-sm text-gray-600 mb-8">あなたの経験が、日本の農業を変える第一歩になります</p>
-      <form class="bg-white rounded-2xl p-8 shadow-card border border-[color:var(--border)] space-y-4">
+      <form action="https://docs.google.com/forms/d/e/1FAIpQLSeE1SH0W2OA3AbBHD6614OQ7EKlIIl7ys9YQNg5uU-7GdlnoQ/formResponse" method="POST" target="_blank" class="bg-white rounded-2xl p-8 shadow-card border border-[color:var(--border)] space-y-5">
         <div>
-          <label class="text-sm font-semibold text-gray-700">お名前</label>
-          <input type="text" class="mt-1 w-full rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm" placeholder="例）山田太郎" />
+          <label class="text-sm font-semibold text-gray-700">メールアドレス *</label>
+          <input name="entry.282335586" type="email" required class="mt-1 w-full rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm" placeholder="example@mail.com" />
         </div>
         <div>
-          <label class="text-sm font-semibold text-gray-700">メールアドレス</label>
-          <input type="email" class="mt-1 w-full rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm" placeholder="example@mail.com" />
+          <label class="text-sm font-semibold text-gray-700">氏名 *</label>
+          <input name="entry.1672967986" type="text" required class="mt-1 w-full rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm" placeholder="例）山田太郎" />
+          <p class="mt-1 text-xs text-gray-500">氏名は公開いたしません。安心してご登録ください。</p>
         </div>
         <div>
-          <label class="text-sm font-semibold text-gray-700">地域 / 作目</label>
-          <input type="text" class="mt-1 w-full rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm" placeholder="例）千葉県 / メロン" />
+          <label class="text-sm font-semibold text-gray-700">事業形態 *</label>
+          <div class="mt-2 space-y-2 text-sm text-gray-700">
+            <label class="flex items-center gap-2"><input type="radio" name="entry.1893653871" value="個人事業主（専業農家）" required> 個人事業主（専業農家）</label>
+            <label class="flex items-center gap-2"><input type="radio" name="entry.1893653871" value="法人（農事組合法人・株式会社など）"> 法人（農事組合法人・株式会社など）</label>
+            <label class="flex items-center gap-2"><input type="radio" name="entry.1893653871" value="個人（兼業・副業）"> 個人（兼業・副業）</label>
+            <label class="flex items-center gap-2"><input type="radio" name="entry.1893653871" value="農業関係者（JA・普及員・研究機関など）"> 農業関係者（JA・普及員・研究機関など）</label>
+            <label class="flex items-center gap-2"><input type="radio" name="entry.1893653871" value="その他"> その他</label>
+          </div>
         </div>
-        <button type="button" class="w-full py-3 rounded-full bg-[color:var(--primary)] text-white font-bold shadow-card">登録する</button>
-        <p class="text-xs text-gray-500">※ 現状はウェイティングリストの登録になります。</p>
+        <div>
+          <label class="text-sm font-semibold text-gray-700">屋号または法人名（任意）</label>
+          <input name="entry.1771876418" type="text" class="mt-1 w-full rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm" placeholder="例）〇〇農園、株式会社アグリ〇〇" />
+        </div>
+        <div>
+          <label class="text-sm font-semibold text-gray-700">メインの栽培品目カテゴリー（複数選択可） *</label>
+          <div class="mt-2 grid grid-cols-1 sm:grid-cols-2 gap-2 text-sm text-gray-700">
+            <label class="flex items-center gap-2"><input type="checkbox" name="entry.864516345" value="水稲（米）"> 水稲（米）</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="entry.864516345" value="露地野菜（キャベツ、大根、白菜など）"> 露地野菜（キャベツ、大根、白菜など）</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="entry.864516345" value="施設野菜（トマト、イチゴ、メロンなど）"> 施設野菜（トマト、イチゴ、メロンなど）</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="entry.864516345" value="果樹（柑橘、リンゴ、ブドウなど）"> 果樹（柑橘、リンゴ、ブドウなど）</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="entry.864516345" value="花き・観葉植物"> 花き・観葉植物</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="entry.864516345" value="茶・特用作物"> 茶・特用作物</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="entry.864516345" value="豆類・いも類・雑穀"> 豆類・いも類・雑穀</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="entry.864516345" value="飼料作物・牧草"> 飼料作物・牧草</label>
+            <label class="flex items-center gap-2"><input type="checkbox" name="entry.864516345" value="その他"> その他</label>
+          </div>
+        </div>
+        <div>
+          <label class="text-sm font-semibold text-gray-700">具体的な作物名 *</label>
+          <input name="entry.270105503" type="text" required class="mt-1 w-full rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm" placeholder="例）キャベツ、ブロッコリー、スナップエンドウ" />
+        </div>
+        <div>
+          <label class="text-sm font-semibold text-gray-700">圃場がある地域の郵便番号 *</label>
+          <input name="entry.981545698" type="text" required class="mt-1 w-full rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm" placeholder="例）270-1176" />
+          <p class="mt-1 text-xs text-gray-500">公開時は広域エリアとして扱われます。</p>
+        </div>
+        <div>
+          <label class="text-sm font-semibold text-gray-700">都道府県 *</label>
+          <select name="entry.14351623" required class="mt-1 w-full rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm bg-white">
+            <option value="">選択してください</option>
+            <option>北海道</option><option>青森県</option><option>岩手県</option><option>宮城県</option><option>秋田県</option><option>山形県</option><option>福島県</option>
+            <option>茨城県</option><option>栃木県</option><option>群馬県</option><option>埼玉県</option><option>千葉県</option><option>東京都</option><option>神奈川県</option>
+            <option>新潟県</option><option>富山県</option><option>石川県</option><option>福井県</option><option>山梨県</option><option>長野県</option><option>岐阜県</option><option>静岡県</option><option>愛知県</option>
+            <option>三重県</option><option>滋賀県</option><option>京都府</option><option>大阪府</option><option>兵庫県</option><option>奈良県</option><option>和歌山県</option>
+            <option>鳥取県</option><option>島根県</option><option>岡山県</option><option>広島県</option><option>山口県</option>
+            <option>徳島県</option><option>香川県</option><option>愛媛県</option><option>高知県</option>
+            <option>福岡県</option><option>佐賀県</option><option>長崎県</option><option>熊本県</option><option>大分県</option><option>宮崎県</option><option>鹿児島県</option><option>沖縄県</option>
+          </select>
+        </div>
+        <div>
+          <label class="text-sm font-semibold text-gray-700">現在、農薬選びや防除で困っていること、または本サービスに期待すること</label>
+          <textarea name="entry.5618148" rows="4" class="mt-1 w-full rounded-lg border border-[color:var(--border)] px-3 py-2 text-sm" placeholder="例）ジェネリックを使いたいが効果が不安、ドローン散布に適した薬を知りたい など"></textarea>
+        </div>
+        <button type="submit" class="w-full py-3 rounded-full bg-[color:var(--primary)] text-white font-bold shadow-card">登録する</button>
+        <p class="text-xs text-gray-500">※ 送信後、Googleフォームの確認画面が新しいタブで開きます。</p>
       </form>
     </div>
   </section>
